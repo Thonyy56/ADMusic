@@ -1,6 +1,7 @@
 <html>
 <head>
 <title>♬</title>
+<link rel="stylesheet" href="style.css">
 <script type="text/javascript">
 
 function init()
@@ -15,40 +16,47 @@ function skip()
 function play(elem)
 {
     var audio = document.getElementById('audio');
-    audio.src = 'music/' + elem.textContent + '.mp3';
+    var cover = document.getElementById('cover');
+
+    var folder = elem.textContent;
+
+    audio.src = 'music/' + folder + '/music.mp3';
+    cover.src = 'music/' + folder + '/cover.jpg';
+
     audio.play();
     elem.className = 'playing';
+
     skip = function()
     {
-            elem.className = '';
-            if (elem.nextElementSibling)
-            {
-                play(elem.nextElementSibling);
-            }
+        elem.className = '';
+        if (elem.nextElementSibling)
+        {
+            play(elem.nextElementSibling);
+        }
     }
 }
 </script>
 
 </head>
-<link rel="stylesheet" href="style.css">
 <body onload="init()">
 <h1 style="text-align: center;">AD Music ♬</h1>
 <hr/>
-<audio id="audio" controls="controls" onerror="alert('Could not play MP3 audio file ' + this.src + '!');" onended="skip()">
-HTML5 MP3 audio required (Chrome, Safari, IE 9?)
-</audio>
+<div class="player-container">
+    <img id="cover" class="cover">
+    <audio id="audio" controls="controls" onended="skip()"></audio>
+</div>
 
 <ul>
 <li>From The Start - Laufey</li>
 <li>Valentine - Laufey</li>
 <li>Let You Break My Heart Again - Laufey</li>
 <li>Falling Behind - Laufey</li>
-<li>I Wish You Love - Laufey</li>
-<li>Street by Street - Laufey</li>
+<li>Manchild - Sabrina Carpenter</li>
+<li>Please Please Please - Sabrina Carpenter</li>
 <li>Like The Movies - Laufey</li>
 <li>Best Friend - Laufey</li>
-<li>James - Laufey</li>
-<li>Magnolia - Laufey</li>
+<li>Tears - Sabrina Carpenter</li>
+<li>House Tour - Sabrinca Carpenter</li>
 <li>Fragile - Laufey</li>
 <li>Beautiful Stranger - Laufey</li>
 <li>Above The Chinese Restaurant - Laufey</li>
@@ -68,6 +76,7 @@ HTML5 MP3 audio required (Chrome, Safari, IE 9?)
 </ul>
 
 <footer>
+
 </footer>
 </body>
 </html>
