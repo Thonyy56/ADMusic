@@ -19,13 +19,6 @@ hr {
     margin: 20px 0;
 }
 
-/* Player centralizado */
-.player-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
 audio {
     width: 350px;
 }
@@ -65,3 +58,23 @@ footer {
     color: #888;
     padding: 5px;
 }
+
+img {
+    width: 640;
+    height: 640;
+}
+
+.cover {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.player-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+} 
